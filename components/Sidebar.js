@@ -8,11 +8,7 @@ import {useAuthState} from 'react-firebase-hooks/auth';
 import {useCollection} from 'react-firebase-hooks/firestore';
 import { auth, db } from '../firebase';
 import Chat from './Chat';
-
 import React from 'react';
-// import { ChatBubbleOutline } from '@material-ui/icons';
-
-
 
 
 const Sidebar = () => {

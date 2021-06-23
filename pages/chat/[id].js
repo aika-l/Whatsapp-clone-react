@@ -58,7 +58,7 @@ export async function getServerSideProps(context){
            
         }
     }
-    console.log(messages)
+    
 }
 
 

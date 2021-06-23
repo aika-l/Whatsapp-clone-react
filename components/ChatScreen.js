@@ -1,21 +1,22 @@
-import {Avatar, IconButton} from '@material-ui/core';
-import {useRouter} from 'next/router';
-import {useAuthState} from 'react-firebase-hooks/auth';
+import { Avatar, IconButton } from '@material-ui/core';
+import { useRouter } from "next/router";
+import { useAuthState } from "react-firebase-hooks/auth";
 import styled from 'styled-components';
-import { auth, db } from '../firebase';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { auth, db } from "../firebase";
 import AttachFileIcon from '@material-ui/icons/AttachFile';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { useCollection } from 'react-firebase-hooks/firestore';
-import { InsertEmoticonIcon } from '@material-ui/icons/InsertEmoticon';
-import { MicIcon} from "@material-ui/icons/Mic";
+import React, { useState, useRef } from 'react'
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import MicIcon from '@material-ui/icons/Mic';
 import Message from './Message';
-import {useState, useRef} from 'react';
 import firebase from 'firebase';
 import getRecipientEmail from '../utils/getRecipientEmail';
 import TimeAgo from 'timeago-react';
 
 
 function ChatScreen({ chat, messages}) {
+
     const [user] = useAuthState(auth);
     const [input, setInput] = useState('');
     const endOfMessagesRef = useRef(null);

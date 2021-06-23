@@ -10,7 +10,7 @@ import {useAuthState} from 'react-firebase-hooks/auth';
 function Chat ({id, users}) {
     const router = useRouter()
     const [user] = useAuthState(auth);
-    const [recipientSnapshot] = useCollection(db.collection('users').where('email', '===', getRecipientEmail(users, user)))
+    const [recipientSnapshot] = useCollection(db.collection('users').where('email', '==', getRecipientEmail(users, user)))
 
     const enterChat = () => {
         router.push(`/chat/${id}`)
